@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      events: [],
+      isLoaded: false
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://www.mocky.io/v2/5c9cdca03300004d003f2151')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          events: data,
+          isLoaded: true
+        })
+      })
+  }
+  
+  render() {
+    const { events, isLoaded} = this.state;
+    if(!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div className="App">
+          <ul>
+            {events.map(item => (
+              <li>
+                Activity: {item.activity} | Startdate: {item.startDate} | Enddate: {item.endDate} | Location: {item.location}
+              </li>
+            ))}
+          </ul>
+        </div>  
+      );
+    }
+  }
 }
 
 export default App;
