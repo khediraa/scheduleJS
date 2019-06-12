@@ -1,8 +1,8 @@
-<h1><b>Quick Start</b></h1>
+# Quick Start
 
-# Install dependencies and start server
-npm install </br>
-npm start
+## Install dependencies and start server
+`npm install`&nbsp;
+`npm start`
 
-# Build for production
-npm run build
+## Build for production
+`npm run build`
