@@ -1,6 +1,7 @@
-Quick Start
+<h1><b>Quick Start</b></h1>
+
 # Install dependencies and start server
-npm install
+npm install </br>
 npm start
 
 # Build for production
