@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calendar from './components/Calendar';
 
 class App extends Component {
   constructor(props) {
@@ -27,13 +28,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <ul>
-            {events.map(item => (
-              <li>
-                Activity: {item.activity} | Startdate: {item.startDate} | Enddate: {item.endDate} | Location: {item.location}
-              </li>
-            ))}
-          </ul>
+          <Calendar />
         </div>  
       );
     }
