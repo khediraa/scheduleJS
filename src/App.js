@@ -28,7 +28,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <Calendar />
+          <Calendar events={events} />
         </div>  
       );
     }
